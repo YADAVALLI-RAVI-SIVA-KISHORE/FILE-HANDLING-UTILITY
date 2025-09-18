@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.Scanner;
 
 public class FileHandler {
+	//I wrote this method to write the content into the created text file 
 public static void writeFile(String fileName,String content) {
 	try(FileWriter writer=new FileWriter(fileName)){
 		writer.write(content);
@@ -13,6 +14,7 @@ public static void writeFile(String fileName,String content) {
 		System.out.println("Error writing file : "+e.getMessage());	
 	}
 }
+	//I wrote this method to display the content from the created text file 
 public static void readFile(String fileName) {
 	try(BufferedReader reader=new BufferedReader(new FileReader(fileName))){
 		String line;
@@ -25,6 +27,7 @@ public static void readFile(String fileName) {
 		System.out.println("Error reading file : "+e.getMessage());
 	}
 }
+	//I wrote this method to append the additional content into the text file
 public static void appendFile(String fileName,String content) {
 	try(FileWriter writer=new FileWriter(fileName,true)){
 		writer.write("\n"+content);
@@ -34,6 +37,7 @@ public static void appendFile(String fileName,String content) {
 		System.out.println("Error appending file : "+e.getMessage());
 	}
 }
+	//This the main method to access the all features of the program
 public static void main(String[] args) {
 	Scanner sc=new Scanner(System.in);
 	System.out.print("Enter the file name (with .txt extension) to create : ");
